@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>addition of two numbers</title>
+	<style type="text/css">
+		*{margin: 0; padding: 0;}
+		section{
+			height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			 background-color:#82ccdd; ;
+			}
+			section h1{
+				text-transform: capitalize;
+				padding-bottom: 30px;
+				text-shadow: 1px 1px 2px white;
+				font-size: 2rem;
+				animation: zooms 1s linear infinite;
+				animation-direction: alternate;
+				text-decoration: underline;
+			}
+			@keyframes zooms{
+				form{transform: translateX(-30px);}
+				to{transform: translateX(30px);}
+				
+			}
+			.centerdiv{
+				width: 500px;
+				height: 400px;
+				background-color: #78e08f;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
+			.insertBox{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100px;
+
+			}
+			#v1,#v2{
+				text-align: center;
+				padding: 20px 30px;
+				width: 35px;
+				font-size: 30px;
+				box-shadow: 1px 1px 0px #999,
+							2px 2px 0px #999,
+							3px 3px 0px #999,
+							4px 4px 0px #999,
+							5px 5px 0px #999,
+							6px 6px 0px #999;
+			}
+			.Box1 p{
+				font-size: 60px;
+				margin: 0 10px 0 10px;
+				font-weight: bolder;
+
+			}
+			.middlebox #answ{
+				margin: 30px 0;
+				padding: 5px 0;
+				text-align: center;
+				width: 180px;
+				height: 40px;
+				font-size: 30px;
+				box-shadow: 1px 1px 0px #999,
+							2px 2px 0px #999,
+							3px 3px 0px #999,
+							4px 4px 0px #999,
+							5px 5px 0px #999,
+							6px 6px 0px #999;
+			}
+			.sentBox button{
+				padding: 10px 20px;
+				font-size: 0.8rem;
+				text-transform: uppercase;
+				color: white;
+				border: none;
+				background-color: #079992;
+				border-bottom-right-radius: 25px;
+				border-bottom-left-radius: 25px;
+				box-shadow: 2px 4px 3px white;
+			}
+	</style>
+
+
+</head>
+<body>
+	<section>
+		<h1>Math Addition Game</h1>
+	<div class="centerdiv">
+		<div class="insertBox">
+			<div class="box1">
+				<input type="text" id="v1">
+			</div>
+		
+		<div class="Box1">
+			<p>+</p>
+		</div>
+	
+			<div class="box1">
+				<input type="text" id="v2">
+			</div>
+		</div>
+		
+		<div class="middlebox"><input type="text" id="answ"></div>
+		<div class="sentBox"><button onclick="jsGame()">Check Answer</button></div>
+	
+	</div>
+	</section>
+
+
+	<script type="text/javascript">
+		
+		let n1 = Math.floor(Math.random()*10+1);
+		let n2 = Math.floor(Math.random()*10+1);
+
+		document.getElementById('v1').value = n1;
+		document.getElementById('v2').value = n2;
+
+		let ans = n1 + n2;
+		
+		const jsGame = () => {
+			var usera = document.getElementById('answ').value;
+			if(usera == ans){
+				alert('Answer Is Correct.');
+			}else{
+				alert("Correct Answer is " + ans +".Try Again ");
+			}
+
+		document.getElementById('answ').value = "";
+
+		n1 = Math.floor(Math.random()*10+1);
+		n2 = Math.floor(Math.random()*10+1);
+
+		document.getElementById('v1').value = n1;
+		document.getElementById('v2').value = n2;
+
+		ans = n1 + n2;
+		}
+
+
+
+	</script>
+
+</body>
+</html>
